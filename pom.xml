@@ -9,7 +9,7 @@
     <version>1.2</version>
   </parent>
   <artifactId>mybati</artifactId>
-  <version>3.5.2</version>
+  <version>3.5.2.1</version>
   <packaging>jar</packaging>
   <name>mybati</name>
   <description>
