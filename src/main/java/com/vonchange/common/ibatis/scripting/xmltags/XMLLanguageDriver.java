@@ -18,9 +18,11 @@ package com.vonchange.common.ibatis.scripting.xmltags;
 import com.vonchange.common.ibatis.logging.Log;
 import com.vonchange.common.ibatis.logging.LogFactory;
 import com.vonchange.common.ibatis.mapping.SqlSource;
+import com.vonchange.common.ibatis.parsing.PropertyParser;
 import com.vonchange.common.ibatis.parsing.XNode;
 import com.vonchange.common.ibatis.parsing.XPathParser;
 import com.vonchange.common.ibatis.scripting.LanguageDriver;
+import com.vonchange.common.ibatis.scripting.defaults.RawSqlSource;
 import com.vonchange.common.ibatis.session.Configuration;
 
 /**
@@ -38,9 +40,19 @@ public class XMLLanguageDriver implements LanguageDriver {
 
   @Override
   public SqlSource createSqlSource(Configuration configuration, String script, Class<?> parameterType) {
-    // issue #3
-      XPathParser parser = new XPathParser(script, false, configuration.getVariables(), null);
-      return createSqlSource(configuration, parser.evalNode("/script"), parameterType);
+      if (script.startsWith("<script>")) {
+          XPathParser parser = new XPathParser(script, false, configuration.getVariables(), null);
+          return createSqlSource(configuration, parser.evalNode("/script"), parameterType);
+      } else {
+          // issue #127
+          script = PropertyParser.parse(script, configuration.getVariables());
+          TextSqlNode textSqlNode = new TextSqlNode(script);
+          if (textSqlNode.isDynamic()) {
+              return new DynamicSqlSource(configuration, textSqlNode);
+          } else {
+              return new RawSqlSource(configuration, script, parameterType);
+          }
+      }
   }
 
 }
