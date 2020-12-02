@@ -20,7 +20,7 @@ import java.lang.reflect.Member;
 import java.util.Map;
 
 import com.vonchange.common.ibatis.reflection.Reflector;
-import ognl.MemberAccess;
+import com.vonchange.ognl.MemberAccess;
 
 /**
  * The {@link MemberAccess} class that based on <a href=

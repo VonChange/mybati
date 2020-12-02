@@ -20,9 +20,9 @@ import java.util.Map;
 import java.util.StringJoiner;
 
 import com.vonchange.common.ibatis.reflection.MetaObject;
-import ognl.OgnlContext;
-import ognl.OgnlRuntime;
-import ognl.PropertyAccessor;
+import com.vonchange.ognl.OgnlContext;
+import com.vonchange.ognl.OgnlRuntime;
+import com.vonchange.ognl.PropertyAccessor;
 
 import com.vonchange.common.ibatis.session.Configuration;
 

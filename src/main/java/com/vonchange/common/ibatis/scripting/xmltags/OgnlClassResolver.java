@@ -15,7 +15,7 @@
  */
 package com.vonchange.common.ibatis.scripting.xmltags;
 
-import ognl.DefaultClassResolver;
+import com.vonchange.ognl.DefaultClassResolver;
 import com.vonchange.common.ibatis.io.Resources;
 
 /**

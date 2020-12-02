@@ -16,10 +16,9 @@
 package com.vonchange.common.ibatis.session;
 
 
-import com.vonchange.common.ibatis.logging.commons.JakartaCommonsLoggingImpl;
+
 import com.vonchange.common.ibatis.logging.jdk14.Jdk14LoggingImpl;
-import com.vonchange.common.ibatis.logging.log4j.Log4jImpl;
-import com.vonchange.common.ibatis.logging.log4j2.Log4j2Impl;
+
 import com.vonchange.common.ibatis.logging.nologging.NoLoggingImpl;
 import com.vonchange.common.ibatis.logging.slf4j.Slf4jImpl;
 import com.vonchange.common.ibatis.logging.stdout.StdOutImpl;
@@ -69,15 +68,10 @@ public class Configuration {
 
     typeAliasRegistry.registerAlias("XML", XMLLanguageDriver.class);
     typeAliasRegistry.registerAlias("RAW", RawLanguageDriver.class);
-
     typeAliasRegistry.registerAlias("SLF4J", Slf4jImpl.class);
-    typeAliasRegistry.registerAlias("COMMONS_LOGGING", JakartaCommonsLoggingImpl.class);
-    typeAliasRegistry.registerAlias("LOG4J", Log4jImpl.class);
-    typeAliasRegistry.registerAlias("LOG4J2", Log4j2Impl.class);
     typeAliasRegistry.registerAlias("JDK_LOGGING", Jdk14LoggingImpl.class);
     typeAliasRegistry.registerAlias("STDOUT_LOGGING", StdOutImpl.class);
     typeAliasRegistry.registerAlias("NO_LOGGING", NoLoggingImpl.class);
-
     languageRegistry.setDefaultDriverClass(XMLLanguageDriver.class);
     languageRegistry.register(RawLanguageDriver.class);
   }

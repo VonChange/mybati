@@ -16,8 +16,8 @@
 package com.vonchange.common.ibatis.scripting.xmltags;
 
 import com.vonchange.common.ibatis.exceptions.BuilderException;
-import ognl.Ognl;
-import ognl.OgnlException;
+import com.vonchange.ognl.Ognl;
+import com.vonchange.ognl.OgnlException;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
