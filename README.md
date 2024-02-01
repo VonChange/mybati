@@ -1,3 +1,3 @@
-MyBatis SQL Mapper Framework for Java
+MyBatis SQL Mapper Framework
 ================================
 only mybatis sql template
