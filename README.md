@@ -1,7 +1,7 @@
 MyBatis SQL Mapper Framework for Java
 ================================
-only mybatis sql template
-olny complex SQL solution provided by mybatis
+only mybatis sql template  
+only complex SQL solution provided by mybatis
 
 ```
 <dependency>
